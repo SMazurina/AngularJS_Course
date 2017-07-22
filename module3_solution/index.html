@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='NarrowItDownApp'>
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Menu list</title>
+  </head>
+  <body>
+    <h1>Menu list</h1>
+
+    <!-- LIST #1 - unlimited items -->
+    <div id="list" ng-controller='NarrowItDownController as list'>
+      <div class="form-group">
+        <input type="text" placeholder="search term" class="form-control" ng-model="list.searchTerm">
+      </div>
+      <div class="form-group narrow-button">
+        <button class="btn btn-primary" ng-click="list.menuSearch();">Narrow It Down For Me!</button>
+      </div>
+
+
+      <narrow-it-down-list items="list.items" found-not="list.foundNot" on-remove="list.removeItem(index)"></narrow-it-down-list>
+
+    </div>
+
+  </body>
+</html>
