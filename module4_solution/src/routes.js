@@ -15,7 +15,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Home page
   .state('home', {
     url: '/',
-    templateUrl: 'src/restaurantlist/templates/home.template.html'
+    templateUrl: 'home.template.html'
   })
 
   // Category list page
