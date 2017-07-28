@@ -21,7 +21,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
   // Category list page
   .state('categoryList', {
     url: '/category-list',
-    templateUrl: 'src/restaurantlist/templates/main-categorylist.template.html',
+    templateUrl: 'main-categorylist.template.html',
     controller: 'MainCategoryListController as categoryList',
     resolve: {
       items: ['MenuListService', function (MenuListService) {
@@ -32,7 +32,7 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   .state('menuItems', {
     url: '/item-detail/{name}',
-    templateUrl: 'src/restaurantlist/templates/menu-itemdetail.template.html',
+    templateUrl: 'menu-itemdetail.template.html',
     controller: 'MenuItemsDetailController as menuItemsDetail',
     resolve: {
       menulist: ['$stateParams', 'MenuListService',
