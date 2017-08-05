@@ -1,0 +1,38 @@
+<div class="container" ng-if="info.userInfo.registred">
+  <h2 id="myinfo-title" class="text-center">Your registred information</h2>
+  <div class="text-center">
+
+      First name: {{info.userInfo.firstName}}
+      <br>
+      Last name: {{info.userInfo.lastName}}
+      <br>
+      Email: {{info.userInfo.email}}
+      <br>
+      Phone: {{info.userInfo.phone}}
+  </div>
+  <h2 id="myfav-title" class="text-center">Your favourite dish</h2>
+
+
+    <div class="row">
+      <div class="col-sm-5">
+        <div class="menu-item-photo">
+          <div>{{info.userInfo.menuItem.short_name}}</div>
+          <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.userInfo.menuItem.short_name}}.jpg" alt="{{info.userInfo.menuItem.name}}">
+        </div>
+
+      </div>
+      <div class="menu-item-description col-sm-7">
+        <h3 class="menu-item-title">{{info.userInfo.menuItem.name}}</h3>
+        <p class="menu-item-details">{{info.userInfo.menuItem.description}}</p>
+      </div>
+    </div>
+    <hr class="visible-xs">
+
+
+</div>
+<div class="container" ng-if="!info.userInfo.registred">
+  <h2 id="notreg-title" class="text-center">Not Signed Up Yet.
+    <a ui-sref="public.signup"> Sign up Now!</a>
+  </h2>
+
+</div>
